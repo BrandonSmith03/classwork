@@ -1,1 +1,6 @@
+small = int(input())
+large = int(input())
 
+refund = (small * 0.10) + (large * 0.25)
+
+print('total refund: {:.2f}' .format (refund))
