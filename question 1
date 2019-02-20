@@ -1,1 +1,11 @@
-
+a= ("St. Roberts Catholic High School")
+b = ("8101 Leslie Drive")
+c = ("Thornhill")
+d = ("ON")
+e = ("L3T 7P4")
+f = ("905-889-4982")
+print (a)
+print (b)
+print (c + ', ' + d)
+print (e)
+print (f)
