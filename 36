@@ -1,0 +1,9 @@
+letter = input()
+vowel = list('aeiou')
+
+if letter in vowel:
+    print (f"{letter}, is a vowel")
+else:
+    print (f'{letter} is a concanent')
+if letter == (y):
+    print(f'{letter} is sometimes a vowel')
