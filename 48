@@ -1,0 +1,26 @@
+year = int(input())
+
+if year == 2000:
+    print('Dragon')
+if year == 2001:
+    print('snake')
+if year == 2002:
+    print('horse')
+if year == 2003:
+    print('sheep')
+if year == 2004:
+    print('monkey')
+if year == 2005:
+    print('rooster')
+if year == 2006:
+    print('dog')
+if year == 2007:
+    print('pig')
+if year == 2008:
+    print('rat')
+if year == 2009:
+    print('ox')
+if year == 2010:
+    print('tiger')
+if year == 2011:
+    print('hare')
