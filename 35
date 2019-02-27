@@ -1,0 +1,7 @@
+year = int(input())
+if year == 1 or year == 2:
+    dog_years = year * 10.5
+    print (dog_years)
+else:
+    dog_years = (year -2) * 4 + 21
+    print (dog_years)
