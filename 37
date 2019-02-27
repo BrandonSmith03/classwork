@@ -1,0 +1,17 @@
+sides = int(input())
+if sides == 3:
+    print ('triangle')
+if sides == 4:
+    print('rectangle')
+if sides == 5:
+    print('pentagon') 
+if sides == 6:
+    print('hexagon')
+if sides == 7:
+    print("septagon")
+if sides == 8:
+    print('octogon')
+if sides == 9:
+    print('nonagon')
+if sides == 9:
+    print('decagon')
