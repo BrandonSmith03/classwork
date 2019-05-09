@@ -1,0 +1,90 @@
+import arcade
+
+WIDTH =400
+HEIGHT = 500
+mouse_pressed = False
+int = 0
+pull_x = 100
+pull_y = 150
+def update(delta_time):
+    global mouse_pressed
+    global int
+
+    if int in range(10):
+        if mouse_pressed == True:
+            int += 1
+            mouse_pressed = False
+
+if mouse_pressed == False:
+    int+= 0
+
+
+
+def on_draw():
+    global mouse_pressed
+    global pull_x
+    global pull_y
+
+    arcade.start_render()
+    arcade.draw_xywh_rectangle_filled(100,400,200,50,arcade.color.GRAY)
+    arcade.draw_text("posture",150,420,arcade.color.RED,20)
+    arcade.draw_xywh_rectangle_outline(100,150,100,50,arcade.color.GRAY)
+    arcade.draw_text("pull",130,170,arcade.color.GREEN,15)
+    arcade.draw_xywh_rectangle_outline(200, 150, 100, 50, arcade.color.GRAY)
+    arcade.draw_text("release", 210, 170, arcade.color.RED, 15)
+    if mouse_pressed == True:
+        arcade.draw_text("{}".format(int),190,250,arcade.color.RED)
+    if int >= 1:
+        arcade.draw_text("{}".format(int), 190, 250, arcade.color.RED)
+    arcade.draw_xywh_rectangle_outline(185,235,30,40,arcade.color.BLACK)
+
+    
+
+
+def on_key_press(key, modifiers):
+    pass
+
+def on_key_release(key, modifiers):
+    pass
+
+def on_mouse_press(x, y, button, modifiers):
+
+    global int
+    global mouse_pressed
+    global pull_x
+    global pull_y
+    print (x,y)
+    if button == arcade.MOUSE_BUTTON_LEFT and x in range(100,200) and y in range(150,200):
+        mouse_pressed = True
+        print('pressed')
+    if button == arcade.MOUSE_BUTTON_RIGHT:
+        mouse_pressed = False
+    if button == arcade.MOUSE_BUTTON_LEFT and x in range(200,300) and y in range(150,200) and int >= 1:
+        int -= 1
+
+
+def on_mouse_release(x,y,button,modifiers):
+    global mouse_pressed
+    global int
+
+    if button == arcade.MOUSE_BUTTON_RIGHT:
+        mouse_pressed = False
+
+
+def setup():
+    arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
+    arcade.set_background_color(arcade.color.WHITE)
+    arcade.schedule(update, 1 / 60)
+    # Override arcade window methods
+    window = arcade.get_window()
+    window.on_draw = on_draw
+    window.on_key_press = on_key_press
+
+    window.on_key_release = on_key_release
+    window.on_mouse_press = on_mouse_press
+
+    arcade.run()
+
+
+if __name__ == '__main__':
+    setup()
